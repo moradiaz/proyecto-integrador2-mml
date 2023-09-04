@@ -15,20 +15,10 @@ export default class Card extends Component {
                     <h2> {this.props.title} </h2>
                     <p> {this.props.overview} </p>
                 
-                    {/* <a className= 'more' onClick = {() => this.cambiar()}>{this.state.valor}</a>
-                    <a href='#' className='delete'>Borrar</a> */}
-                {/* {
-                this.state.esFavorito ?
-                <button onClick={()=> this.sacarFavoritos(this.props.id)}>
-                    Sacar de favoritos
-                </button>
-                :
-                <button onClick={() =>this.agregarFavoritos(this.props.id)}>
-                    Agregar a favoritos
-                </button>
-                } */}
+                    
             </article>
         </section>
+        
     </>
     )
   }
