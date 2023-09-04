@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Card from '../Card/Card'
+import Form from '../Form/Form'
 
 export default class CardContainer extends Component {
     constructor(props){
