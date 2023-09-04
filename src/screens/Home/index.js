@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import {options} from '../../utils/constants'
 import CardContainer from '../../components/CardContainer/CardContainer'
+import Form from '../../components/Form/Form'
+
 
 export default class index extends Component {
     
