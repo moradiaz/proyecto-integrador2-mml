@@ -25,7 +25,7 @@ export default function Header() {
     <nav>
         <ul className='main-nav'>
             {
-                elementos.map((elm) => <li>
+                elementos.map((elm, idx) => <li>
                     <Link to = {elm.link}>
                         {elm.nombre}
                     </Link>
