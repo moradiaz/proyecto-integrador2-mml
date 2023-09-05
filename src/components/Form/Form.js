@@ -12,7 +12,7 @@ class Form extends Component{
     }
 
     evitarSubmit(evento){
-        evento.preventDefault() //para que no se actialice el sitio, el estado no se va a actualizar 
+        evento.preventDefault() //para que no se actualice el sitio, el estado no se va a actualizar 
 
 
     }
@@ -29,11 +29,10 @@ class Form extends Component{
     render(){
         return(
             <>
-            <form onSubmit={(evento)=> this.evitarSubmit(evento)}>
-                <input onChange={(evento)=> this.guardarValor(evento)} value={this.state.valorInput}/>{/*  //para saber lo que escribio el usuario en el form */}
-                <button> Enviar formulario</button>
-               
-            </form>
+                <form onSubmit={(evento)=> this.evitarSubmit(evento)}>
+                    <input onChange={(evento)=> this.guardarValor(evento)} value={this.state.valorInput}/>{/*  //para saber lo que escribio el usuario en el form */}
+                    <button>Search movie</button>
+                </form>
             </>
         )
     }

@@ -1,0 +1,59 @@
+
+.cardContainer{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    flex-flow: row;
+    width: auto;
+ 
+}
+.name{
+    color: black;
+    word-spacing: normal;
+    width: auto;
+}
+
+.character-card{
+    
+    color: #777;
+    font-size: 20px;
+    padding: 10px;
+    margin-bottom: 20px;
+    width: 100%;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 .15rem 1.75rem 0 rgba(58,59,69,.15);
+    line-height: 100%;
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+
+    
+}
+.character-card img{
+    width: 100%;
+    margin-bottom: 20px; 
+}
+
+.character-card p {
+    margin: 3px 0;
+}
+.character-card h2 {
+    margin: 2px 0;
+}
+
+
+.character-card img{
+    width: 100%;
+    margin-bottom: 20px; 
+    flex-direction: row;
+}
+
+.character-card p {
+    margin: 3px 0;
+}
+.character-card h2 {
+    margin: 2px 0;
+}

@@ -9,20 +9,40 @@ export default class index extends Component {
     constructor(props){
         super(props)
         this.state = {
-            peliculas: [],
+            popular: [],
             backup: [],
-            page: 1
+            page: 1,
+            upcoming: [],
+            backupUp: []
         }
     }
 
     componentDidMount(){
-        fetch('https://api.themoviedb.org/3/discover/movie', options)
+        fetch('https://api.themoviedb.org/3/movie/popular', options)
         .then (resp => resp.json())
         .then(data => this.setState({
-            peliculas: data.results
+            popular: data.results.slice(0,5),
+            backup: data.results.slice(0,5)
         }))
         .catch(err => console.log(err))
+
+        fetch('https://api.themoviedb.org/3/movie/upcoming', options)
+        .then(resp => resp.json())
+        .then(data => this.setState({
+            upcoming: data.results.slice(0,5),
+            backupUp: data.results.slice(0,5)
+        }))
+        .catch(err => console.log(err))
+
     }
+    
+    filtrarPeliculas(nombre){
+        let peliculasFiltrados = this.state.backup.filter((elm) => elm.title.toLowerCase().includes(nombre.toLowerCase()))
+        this.setState({
+            popular: peliculasFiltrados
+        })
+    }
+    
 
 
 
@@ -30,7 +50,17 @@ export default class index extends Component {
   render() {
     return (
       <>
-        <CardContainer peliculas = {this.state.peliculas}/>
+        <Form filtrarPeliculas = {(nombre) => this.filtrarPeliculas(nombre)}/>
+        <main>
+            <h1>POPULAR MOVIES</h1>
+            <CardContainer peliculas = {this.state.popular}/>
+            <h1>UPCOMING MOVIES</h1>
+            <CardContainer peliculas = {this.state.upcoming} />
+
+        </main>
+       
+
+
       </>
     )
   }
