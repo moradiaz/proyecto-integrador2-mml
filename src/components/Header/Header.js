@@ -12,12 +12,12 @@ const elementos = [
         link:'/favoritos'
     },
     {
-        nombre: 'Películas',
-        link: '/peliculas'
+        nombre: 'Popular',
+        link: '/popular'
     },
     {
-        nombre: 'Series',
-        link: '/series'
+        nombre: 'Upcoming',
+        link: '/upcoming'
     }
 ]
 export default function Header() {
