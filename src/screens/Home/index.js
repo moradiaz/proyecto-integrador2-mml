@@ -39,7 +39,8 @@ export default class index extends Component {
     filtrarPeliculas(nombre){
         let peliculasFiltrados = this.state.backup.filter((elm) => elm.title.toLowerCase().includes(nombre.toLowerCase()))
         this.setState({
-            popular: peliculasFiltrados
+            popular: peliculasFiltrados , 
+            upcoming: peliculasFiltrados
         })
     }
     

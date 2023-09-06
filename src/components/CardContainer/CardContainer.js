@@ -12,7 +12,9 @@ export default class CardContainer extends Component {
       <div className='cardContainer'>
 
         {
-        this.props.peliculas.map((elm, idx) => <Card key = {elm.title + idx} id = {elm.id} poster_path = {elm.poster_path} title = {elm.title} overview = {elm.overview}/>
+          this.props.peliculas.length === 0?
+          <h1>Trayendo Peliculas...</h1>:
+        this.props.peliculas.map((elm, idx) => <Card key = {elm.title + idx} id = {elm.id} poster_path = {elm.poster_path} title = {elm.title} overview = {elm.overview} actualizarState = {this.props.actualizarState? (id) => this.props.actualizarState(id) : false}/>
         )
         }
         
