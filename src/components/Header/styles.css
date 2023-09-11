@@ -55,3 +55,9 @@ main {
     flex-wrap: nowrap;
 
 }
+
+@media (max-width: 390px) {
+    .nav {
+        width: 190vh;
+    }
+}

@@ -31,7 +31,7 @@ export default class index extends Component {
         .then(resp => resp.json())
         .then(data => this.setState({
             upcoming: data.results.slice(0,5),
-            backupUp: data.results.slice(0,5)
+            backup: data.results.slice(0,5)
         }))
         .catch(err => console.log(err))
 

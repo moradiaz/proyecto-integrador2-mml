@@ -5,3 +5,12 @@
     flex-flow: row;
     
 }
+
+@media (max-width: 390px) {
+    .cardContainer{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        flex-flow: row;
+    }
+}

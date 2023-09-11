@@ -43,3 +43,12 @@
   
   
 }
+
+@media (max-width: 390px) {
+    .character-card{
+        width: 80vh;
+    }
+    .character-card img {
+        width: 30vh;
+    }
+}
