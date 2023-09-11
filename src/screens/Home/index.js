@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import {options} from '../../utils/constants'
 import CardContainer from '../../components/CardContainer/CardContainer'
 import Form from '../../components/Form/Form'
+import './styles.css'
 
 
 export default class index extends Component {
@@ -53,9 +54,9 @@ export default class index extends Component {
       <>
         <Form filtrarPeliculas = {(nombre) => this.filtrarPeliculas(nombre)}/>
         <main>
-            <h1>POPULAR MOVIES</h1>
+            <h1 className='titulo'>POPULAR MOVIES</h1>
             <CardContainer peliculas = {this.state.popular}/>
-            <h1>UPCOMING MOVIES</h1>
+            <h1 className='titulo'>UPCOMING MOVIES</h1>
             <CardContainer peliculas = {this.state.upcoming} />
 
         </main>

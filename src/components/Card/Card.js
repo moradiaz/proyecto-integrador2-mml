@@ -16,7 +16,7 @@ export default class Card extends Component {
   esconder(){
     this.setState({
       texto:"Ver menos",
-      overview: "Descripción" + this.props.overview
+      overview: "Descripción: " + this.props.overview
     })
   }
 
@@ -36,19 +36,12 @@ export default class Card extends Component {
                 <Link to = {`/peliculas/id/${this.props.id}`}>
                     <p className='imagen'><img src={`https://image.tmdb.org/t/p/w342${this.props.poster_path}`}alt="" /></p>
                 </Link>
-                    <h2 className='name'> {this.props.title} </h2>
-                    
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                
-            
+                    <h2 className='title'> {this.props.title} </h2>
+                    <br/>
                 <button className='botonDescripcion'onClick={() => 
                   this.state.texto === 'Ver mas'? 
                   this.esconder()
                   :this.mostrar()}>{this.state.texto} 
-            
                </button>
                 
               <p> {this.state.overview}</p>

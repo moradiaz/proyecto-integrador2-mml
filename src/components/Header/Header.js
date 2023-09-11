@@ -33,7 +33,7 @@ export default function Header() {
             }
         </ul>
         <ul>
-            <img className='logo' src= './img/logo.jpg'alt="" />
+            <img className='logo' src= './img/log.png'alt="" />
         </ul>
         
     </nav>

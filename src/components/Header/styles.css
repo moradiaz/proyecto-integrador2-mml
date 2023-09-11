@@ -5,8 +5,8 @@ nav{
     flex-wrap: wrap;
     justify-content: space-between;
     padding: 0 20px;
-    background-color: #ff5757;
-    color: #fff
+    background-color: #2F4F4F;
+    color: #fff;
 }
 
 nav ul {
@@ -14,6 +14,7 @@ nav ul {
     flex-direction: row;
     flex-wrap: wrap;
     align-items: center;
+    
 }
 
 .main-nav li,
@@ -23,10 +24,12 @@ nav ul {
     flex-wrap: wrap;
     flex-direction: row;
     align-items: center;
+    color: white;
 }
 
 .main-nav li:first-child {
     font-weight: bold;
+    color: white;
 }
 
 .user img {

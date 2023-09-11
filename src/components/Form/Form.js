@@ -29,9 +29,9 @@ class Form extends Component{
     render(){
         return(
             <>
-                <form onSubmit={(evento)=> this.evitarSubmit(evento)}>
-                    <input onChange={(evento)=> this.guardarValor(evento)} value={this.state.valorInput}/>{/*  //para saber lo que escribio el usuario en el form */}
-                    <button>Search movie</button>
+                <form className="formulario" onSubmit={(evento)=> this.evitarSubmit(evento)}>
+                    <input className="form" onChange={(evento)=> this.guardarValor(evento)} value={this.state.valorInput}/>{/*  //para saber lo que escribio el usuario en el form */}
+                    <button type="submit">Search movie</button>
                 </form>
             </>
         )

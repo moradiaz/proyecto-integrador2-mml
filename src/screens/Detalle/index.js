@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { options } from '../../utils/constants'
 import {Link} from 'react-router-dom'
+import './styles.css'
 
 export default class index extends Component {
     constructor(props){
@@ -70,12 +71,12 @@ export default class index extends Component {
         {
           this.state.dataPeliculas !== null? 
           <div> 
-            <article>
+            <article className='character-card'>
             <Link to = {`/peliculas/id/${this.state.dataPeliculas.id}`}>
                 <img src={`https://image.tmdb.org/t/p/w342${this.state.dataPeliculas.poster_path}`}alt="" />
             </Link>
             </article>
-            <article>
+            <article className='detallePelis'>
               <h2>{this.state.dataPeliculas.title}</h2>
               <p>RATING:{this.state.dataPeliculas.vote_average}</p>
               <p>FECHA DE ESTRENO: {this.state.dataPeliculas.release_date}</p>
