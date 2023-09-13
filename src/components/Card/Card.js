@@ -31,7 +31,7 @@ export default class Card extends Component {
   render() {
     return (
     <> 
-      <div className='cardContainer'>
+      <div>
             <article className='character-card'>
                 <Link to = {`/peliculas/id/${this.props.id}`}>
                     <p className='imagen'><img src={`https://image.tmdb.org/t/p/w342${this.props.poster_path}`}alt="" /></p>

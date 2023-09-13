@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { options } from '../../utils/constants'
 import {Link} from 'react-router-dom'
-import './styles.css'
+
 
 export default class index extends Component {
     constructor(props){
@@ -81,7 +81,14 @@ export default class index extends Component {
               <p>RATING:{this.state.dataPeliculas.vote_average}</p>
               <p>FECHA DE ESTRENO: {this.state.dataPeliculas.release_date}</p>
               <p>SINOPSIS: {this.state.dataPeliculas.overview}</p>
-              {/* <p>GENEROS : {this.state.dataPeliculas.genre[0]}</p> */}
+              <p>GENEROS : </p>
+              <ul> {
+                  this.state.dataPeliculas.genres.map(
+                    (elm) => <li>{elm.name}</li>
+                  )
+                }
+
+              </ul>
               <p>DURACION: {this.state.dataPeliculas.runtime}</p>
               {
                 this.state.esFavorito ? 

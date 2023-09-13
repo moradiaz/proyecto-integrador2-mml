@@ -1,3 +1,9 @@
 .titulo{
     font-size: 50px;
 }
+.formulario{
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    padding-top: 20px;
+}

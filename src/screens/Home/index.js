@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import {options} from '../../utils/constants'
 import CardContainer from '../../components/CardContainer/CardContainer'
-import Form from '../../components/Form/Form'
 import './styles.css'
 
 
@@ -14,7 +13,9 @@ export default class index extends Component {
             backup: [],
             page: 1,
             upcoming: [],
-            backupUp: []
+            backupUp: [], 
+            valorInput: '', 
+            resultados: []
         }
     }
 
@@ -36,15 +37,30 @@ export default class index extends Component {
         .catch(err => console.log(err))
 
     }
-    
-    filtrarPeliculas(nombre){
-        let peliculasFiltrados = this.state.backup.filter((elm) => elm.title.toLowerCase().includes(nombre.toLowerCase()))
-        this.setState({
-            popular: peliculasFiltrados , 
-            upcoming: peliculasFiltrados
-        })
+    evitarSubmit(evento){
+        evento.preventDefault() //para que no se actualice el sitio, el estado no se va a actualizar 
+
+
+    }
+    guardarValor(evento){ 
+        this.setState(
+            {
+                valorInput: evento.target.value
+            },
+            () => this.busquedaHome()
+        )
     }
     
+    busquedaHome(){
+        if (this.state.valorInput != '') {
+            fetch (`https://api.themoviedb.org/3/search/movie?query=${this.state.valorInput}`, options)
+            .then(resp => resp.json())
+            .then(data => this.setState({
+                resultados: data.results
+            }))
+            .catch(err => console.log(err)) 
+        }   
+    }
 
 
 
@@ -52,7 +68,11 @@ export default class index extends Component {
   render() {
     return (
       <>
-        <Form filtrarPeliculas = {(nombre) => this.filtrarPeliculas(nombre)}/>
+        <form className="formulario" onSubmit={(evento)=> this.evitarSubmit(evento)}>
+                <input className="form" onChange={(evento)=> this.guardarValor(evento)} value={this.state.valorInput}/>{/*  //para saber lo que escribio el usuario en el form */}
+                <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+        </form>
+        {this.state.valorInput === ''? 
         <main>
             <h1 className='titulo'>POPULAR MOVIES</h1>
             <CardContainer peliculas = {this.state.popular}/>
@@ -60,9 +80,12 @@ export default class index extends Component {
             <CardContainer peliculas = {this.state.upcoming} />
 
         </main>
-       
-
-
+        :
+        <>
+        <h1>Resultados de busqueda</h1>
+        <CardContainer peliculas = {this.state.resultados}/>
+        </>
+        }
       </>
     )
   }
